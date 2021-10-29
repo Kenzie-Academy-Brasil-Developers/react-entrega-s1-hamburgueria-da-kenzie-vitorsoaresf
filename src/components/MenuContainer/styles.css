@@ -1,0 +1,7 @@
+.list-products {
+  list-style: none;
+}
+
+.list-products__item {
+  margin: 10px;
+}

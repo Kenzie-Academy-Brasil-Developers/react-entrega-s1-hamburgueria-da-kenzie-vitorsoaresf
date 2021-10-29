@@ -4,7 +4,7 @@ import "./App.css";
 import { useState } from "react";
 
 import MenuContainer from "./components/MenuContainer";
-
+import ShoppingCart from "./components/ShoppingCart";
 function App() {
   const [products, setProducts] = useState([
     { id: 1, name: "Hamburguer", category: "Sanduíches", price: 7.99 },
@@ -19,14 +19,33 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [isCart, setIsCart] = useState(false);
 
-  const showProducts = () => {};
-  const handleClick = (productId) => {};
+  const showProducts = (category) => {
+    setFilteredProducts(
+      products.map((element) => element.category === category)
+    );
+  };
+  const handleClick = (productId) => {
+    setCurrentSale([...currentSale, productId]);
+  };
+
+  const removeProduct = (productId) => {
+    setCurrentSale(currentSale.filter((element) => element.id !== productId));
+  };
+
   const totalSail = () => {};
-
+  console.log(currentSale);
   return (
     <div className="App">
-      <MenuContainer products={products} />
+      <MenuContainer
+        products={products}
+        handleClick={handleClick}
+        removeProduct={removeProduct}
+        setIsCart={setIsCart}
+        isCart={isCart}
+      />
+      <ShoppingCart currentSale={currentSale} />
     </div>
   );
 }

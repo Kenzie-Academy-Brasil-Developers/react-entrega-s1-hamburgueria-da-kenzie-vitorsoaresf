@@ -2,6 +2,9 @@
   text-align: center;
   background-color: violet;
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-logo {

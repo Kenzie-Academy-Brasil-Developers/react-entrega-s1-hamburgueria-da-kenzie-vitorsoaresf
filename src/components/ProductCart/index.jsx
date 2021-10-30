@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./styles.css";
 
-function ProductCart({ product, removeProduct, setTotalCart }) {
+function ProductCart({ product, removeProduct }) {
   const [amount, setAmount] = useState(1);
 
   const addAmount = () => {
@@ -27,8 +27,8 @@ function ProductCart({ product, removeProduct, setTotalCart }) {
             {product.category}
           </h4>
           {/* <span>{product.quantity}</span> */}
-          <div className="cart__product__quantity">
-            <button onClick={() => addAmount()}>+</button>
+          {/* <div className="cart__product__quantity">
+            <button onClick={() => subAmount()}>-</button>
 
             <input
               disabled
@@ -37,8 +37,9 @@ function ProductCart({ product, removeProduct, setTotalCart }) {
               type="number"
               value={amount}
             />
-            <button onClick={() => subAmount()}>-</button>
-          </div>
+            <button onClick={() => product.quantity++}>+</button>
+          </div> */}
+          <span>{product.quantity}</span>
         </div>
       </div>
       <button

@@ -1,9 +1,11 @@
 import ProductCart from "../ProductCart";
-import { useState } from "react";
 import "./styles.css";
 
-function ShoppingCart({ currentSale, removeProduct }) {
-  const [totalCart, setTotalCart] = useState(0);
+function ShoppingCart({ currentSale, removeProduct, setCurrentSale }) {
+  const initial = currentSale.reduce(
+    (acc, element) => (acc += element.price),
+    0
+  );
 
   return (
     <div className="shoppingCart">
@@ -14,14 +16,18 @@ function ShoppingCart({ currentSale, removeProduct }) {
         <ul className="list-cart">
           {currentSale.map((product, index) => (
             <li id={index} key={index}>
-              <ProductCart
-                removeProduct={removeProduct}
-                product={product}
-                setTotalCart={setTotalCart}
-              />
+              <ProductCart removeProduct={removeProduct} product={product} />
             </li>
           ))}
-          {/* <span>{totalCart}</span> */}
+          {
+            <div className="shoppingCart__amount">
+              <div className="shoppingCart__amount_description">
+                <p>Total</p>
+                <p className="value">{initial}</p>
+              </div>
+              <button onClick={() => setCurrentSale([])}>Remover todos</button>
+            </div>
+          }
         </ul>
       ) : (
         <div className="list-clear">

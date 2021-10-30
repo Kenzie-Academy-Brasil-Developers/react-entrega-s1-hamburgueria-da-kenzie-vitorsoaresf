@@ -32,7 +32,6 @@ function App() {
   const removeProduct = (productId) => {
     setCurrentSale(currentSale.filter((element) => element.id !== productId));
   };
-  console.log(currentSale);
   return (
     <div className="App">
       <header className="App__title">
@@ -50,11 +49,13 @@ function App() {
         handleClick={handleClick}
         currentSale={currentSale}
         setTotalCart={setTotalCart}
+        removeProduct={removeProduct}
       />
       <ShoppingCart
         removeProduct={removeProduct}
         currentSale={currentSale}
         totalCart={totalCart}
+        setCurrentSale={setCurrentSale}
       />
     </div>
   );

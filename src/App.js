@@ -19,7 +19,6 @@ function App() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
-  const [isCart, setIsCart] = useState(false);
 
   const showProducts = (category) => {
     setFilteredProducts(
@@ -41,9 +40,7 @@ function App() {
       <MenuContainer
         products={products}
         handleClick={handleClick}
-        removeProduct={removeProduct}
-        setIsCart={setIsCart}
-        isCart={isCart}
+        currentSale={currentSale}
       />
       <ShoppingCart removeProduct={removeProduct} currentSale={currentSale} />
     </div>

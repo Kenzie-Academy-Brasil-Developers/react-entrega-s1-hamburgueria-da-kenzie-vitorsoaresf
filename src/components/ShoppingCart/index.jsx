@@ -1,7 +1,10 @@
 import ProductCart from "../ProductCart";
+import { useState } from "react";
 import "./styles.css";
 
 function ShoppingCart({ currentSale, removeProduct }) {
+  const [sumItemsCart, setSumItemsCart] = useState(0);
+
   return (
     <div className="shoppingCart">
       <header className="shoppingCart__title">
@@ -10,8 +13,13 @@ function ShoppingCart({ currentSale, removeProduct }) {
       {currentSale.length ? (
         <ul className="list-cart">
           {currentSale.map((product, index) => (
-            <li key={index}>
-              <ProductCart removeProduct={removeProduct} product={product} />
+            <li id={index} key={index}>
+              <ProductCart
+                currentSale={currentSale}
+                removeProduct={removeProduct}
+                product={product}
+              />
+              {/* <span>{product.quantity}</span> */}
             </li>
           ))}
         </ul>

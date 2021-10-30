@@ -1,16 +1,17 @@
 import "./styles.css";
 
-function Product({
-  product,
-  handleClick,
-  products,
-  removeProduct,
-  setIsCart,
-  isCart,
-}) {
+function Product({ product, handleClick, products, currentSale }) {
   const addProduct = (productId) => {
-    handleClick(products.find((element) => element.id === productId));
-    // set;
+    const newElement = products.find((element) => element.id === productId);
+    const isThere = currentSale.find((element) =>
+      element.id === newElement.id ? true : false
+    );
+    if (isThere) {
+      newElement.quantity++;
+    } else {
+      newElement.quantity = 1;
+      handleClick(newElement);
+    }
   };
 
   return (

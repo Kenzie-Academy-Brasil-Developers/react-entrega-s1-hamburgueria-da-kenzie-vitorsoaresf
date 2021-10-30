@@ -1,15 +1,8 @@
 import "./styles.css";
 
 import Product from "../Product";
-import ShoppingCart from "../ShoppingCart";
 
-function MenuContainer({
-  products,
-  handleClick,
-  removeProduct,
-  setIsCart,
-  isCart,
-}) {
+function MenuContainer({ products, handleClick, currentSale }) {
   return (
     <ul className="list-products">
       {products.map((product, index) => (
@@ -18,9 +11,7 @@ function MenuContainer({
             product={product}
             handleClick={handleClick}
             products={products}
-            removeProduct={removeProduct}
-            setIsCart={setIsCart}
-            isCart={isCart}
+            currentSale={currentSale}
           />
         </li>
       ))}

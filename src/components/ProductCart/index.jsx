@@ -1,7 +1,9 @@
+import { useState } from "react";
 import "./styles.css";
 
-function ProductCart({ product, removeProduct }) {
-  console.log(product.name + product.id);
+function ProductCart({ currentSale, product, removeProduct }) {
+  const [sumItemsCart, setSumItemsCart] = useState(0);
+
   return (
     <div className="cart">
       <div className="cart__product">
@@ -13,6 +15,7 @@ function ProductCart({ product, removeProduct }) {
           <h4 className="cart__product__description-category">
             {product.category}
           </h4>
+          <span>{product.quantity}</span>
         </div>
       </div>
       <button

@@ -35,6 +35,16 @@ function App() {
   console.log(currentSale);
   return (
     <div className="App">
+      <header className="App__title">
+        <div className="App__title__logo">
+          <p>Burguer</p>
+          <p>Kenzie</p>
+        </div>
+        <div className="App__title__search">
+          <input type="text" maxLength="10px" placeholder="Digitar pesquisa" />
+          <button>Pesquisar</button>
+        </div>
+      </header>
       <MenuContainer
         products={products}
         handleClick={handleClick}

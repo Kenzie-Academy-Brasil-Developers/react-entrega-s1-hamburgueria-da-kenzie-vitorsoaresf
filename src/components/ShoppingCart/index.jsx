@@ -1,12 +1,12 @@
 import ProductCart from "../ProductCart";
 import "./styles.css";
 
-function ShoppingCart({ currentSale }) {
+function ShoppingCart({ currentSale, removeProduct }) {
   return (
     <ul className="list-cart">
       {currentSale.map((product, index) => (
         <li key={index}>
-          <ProductCart product={product} />
+          <ProductCart removeProduct={removeProduct} product={product} />
         </li>
       ))}
     </ul>

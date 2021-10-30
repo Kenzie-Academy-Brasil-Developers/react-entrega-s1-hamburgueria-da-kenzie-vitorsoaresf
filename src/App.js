@@ -45,7 +45,7 @@ function App() {
         setIsCart={setIsCart}
         isCart={isCart}
       />
-      <ShoppingCart currentSale={currentSale} />
+      <ShoppingCart removeProduct={removeProduct} currentSale={currentSale} />
     </div>
   );
 }

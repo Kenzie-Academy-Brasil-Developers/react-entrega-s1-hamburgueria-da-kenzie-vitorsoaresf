@@ -1,6 +1,6 @@
 import "./styles.css";
 
-function ProductCart({ product, removeProduct, currentSale }) {
+function ProductCart({ product, removeProduct }) {
   console.log(product.name + product.id);
   return (
     <div className="cart">

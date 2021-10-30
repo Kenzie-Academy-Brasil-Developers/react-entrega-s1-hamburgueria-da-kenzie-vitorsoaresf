@@ -6,9 +6,7 @@ function Product({ product, handleClick, products, currentSale }) {
     const isThere = currentSale.find((element) =>
       element.id === newElement.id ? true : false
     );
-    if (isThere) {
-      newElement.quantity++;
-    } else {
+    if (!isThere) {
       newElement.quantity = 1;
       handleClick(newElement);
     }

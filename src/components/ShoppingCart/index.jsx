@@ -3,7 +3,7 @@ import { useState } from "react";
 import "./styles.css";
 
 function ShoppingCart({ currentSale, removeProduct }) {
-  const [sumItemsCart, setSumItemsCart] = useState(0);
+  const [totalCart, setTotalCart] = useState(0);
 
   return (
     <div className="shoppingCart">
@@ -15,13 +15,13 @@ function ShoppingCart({ currentSale, removeProduct }) {
           {currentSale.map((product, index) => (
             <li id={index} key={index}>
               <ProductCart
-                currentSale={currentSale}
                 removeProduct={removeProduct}
                 product={product}
+                setTotalCart={setTotalCart}
               />
-              {/* <span>{product.quantity}</span> */}
             </li>
           ))}
+          {/* <span>{totalCart}</span> */}
         </ul>
       ) : (
         <div className="list-clear">

@@ -109,3 +109,12 @@
   border-radius: 5px;
   color: rgb(173, 71, 71);
 }
+
+.cart__product__quantity {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cart__product__quantity__number {
+  width: 20px;
+}

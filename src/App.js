@@ -18,7 +18,7 @@ function App() {
 
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentSale, setCurrentSale] = useState([]);
-  const [cartTotal, setCartTotal] = useState(0);
+  const [totalCart, setTotalCart] = useState(0);
 
   const showProducts = (category) => {
     setFilteredProducts(
@@ -32,8 +32,6 @@ function App() {
   const removeProduct = (productId) => {
     setCurrentSale(currentSale.filter((element) => element.id !== productId));
   };
-
-  const totalSail = () => {};
   console.log(currentSale);
   return (
     <div className="App">
@@ -41,8 +39,13 @@ function App() {
         products={products}
         handleClick={handleClick}
         currentSale={currentSale}
+        setTotalCart={setTotalCart}
       />
-      <ShoppingCart removeProduct={removeProduct} currentSale={currentSale} />
+      <ShoppingCart
+        removeProduct={removeProduct}
+        currentSale={currentSale}
+        totalCart={totalCart}
+      />
     </div>
   );
 }

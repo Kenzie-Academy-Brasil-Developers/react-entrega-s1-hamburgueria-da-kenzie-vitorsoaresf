@@ -1,9 +1,25 @@
 import ProductCart from "../ProductCart";
+import { useState } from "react";
 import "./styles.css";
 
 function ShoppingCart({ currentSale, removeProduct, setCurrentSale }) {
+  const [subTotal, setSubTotal] = useState(0);
+  const [countItems, setCountItems] = useState(1);
+
+  const addAmount = (newValue) => {
+    setSubTotal(newValue);
+    setCountItems(countItems + 1);
+  };
+
+  const subAmount = (newValue) => {
+    if (countItems >= 1) {
+      setSubTotal(newValue);
+      setCountItems(countItems - 1);
+    }
+  };
+
   const initial = currentSale
-    .reduce((acc, element) => (acc += element.price), 0)
+    .reduce((acc, element) => (acc += element.price), subTotal)
     .toFixed(2);
 
   return (
@@ -16,6 +32,14 @@ function ShoppingCart({ currentSale, removeProduct, setCurrentSale }) {
           {currentSale.map((product, index) => (
             <li id={index} key={index}>
               <ProductCart removeProduct={removeProduct} product={product} />
+              <div className="bt-add-sub">
+                <button onClick={() => subAmount(subTotal - product.price)}>
+                  -
+                </button>
+                <button onClick={() => addAmount(subTotal + product.price)}>
+                  +
+                </button>
+              </div>
             </li>
           ))}
           {

@@ -78,6 +78,15 @@
   margin-bottom: 15px;
 }
 
+.bt-add-sub button {
+  border: none;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+}
+.bt-add-sub:nth-child(2) {
+  margin-left: 5px;
+}
+
 @media (min-width: 1024px) {
   .shoppingCart {
     margin: 0px 26px 0px 0px;

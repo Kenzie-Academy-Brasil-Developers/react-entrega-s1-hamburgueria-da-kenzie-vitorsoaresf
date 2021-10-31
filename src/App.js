@@ -36,7 +36,7 @@ function App() {
   const removeProduct = (productId) => {
     setCurrentSale(currentSale.filter((element) => element.id !== productId));
   };
-  console.log(search);
+  console.log(currentSale);
   return (
     <div className="App">
       <header className="App__title">

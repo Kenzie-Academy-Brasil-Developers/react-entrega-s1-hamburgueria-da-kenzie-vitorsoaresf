@@ -18,8 +18,6 @@ function MenuContainer({
             handleClick={handleClick}
             products={products}
             currentSale={currentSale}
-            setTotalCart={setTotalCart}
-            removeProduct={removeProduct}
           />
         </li>
       ))}

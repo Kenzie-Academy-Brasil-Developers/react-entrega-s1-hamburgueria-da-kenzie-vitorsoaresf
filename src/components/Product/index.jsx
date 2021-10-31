@@ -1,9 +1,15 @@
 import "./styles.css";
 
-function Product({ product, handleClick, products }) {
+function Product({ product, handleClick, products, currentSale }) {
   const addProduct = (productId) => {
     const newElement = products.find((element) => element.id === productId);
-    handleClick(newElement);
+    const elementThere = currentSale.find(
+      (element) => element.id === newElement.id
+    );
+
+    if (!elementThere) {
+      handleClick(newElement);
+    }
   };
 
   return (

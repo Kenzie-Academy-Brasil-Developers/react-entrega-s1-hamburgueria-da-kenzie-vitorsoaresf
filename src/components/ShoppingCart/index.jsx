@@ -2,10 +2,9 @@ import ProductCart from "../ProductCart";
 import "./styles.css";
 
 function ShoppingCart({ currentSale, removeProduct, setCurrentSale }) {
-  const initial = currentSale.reduce(
-    (acc, element) => (acc += element.price),
-    0
-  );
+  const initial = currentSale
+    .reduce((acc, element) => (acc += element.price), 0)
+    .toFixed(2);
 
   return (
     <div className="shoppingCart">

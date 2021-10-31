@@ -43,7 +43,7 @@
 }
 
 .App__title__search input {
-  width: 110px;
+  width: 70%;
   border: none;
   font-family: "Inter", sans-serif;
   cursor: pointer;

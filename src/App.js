@@ -16,13 +16,16 @@ function App() {
     { id: 7, name: "Fanta", category: "Bebidas", price: 4.99 },
   ]);
 
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState(products);
   const [currentSale, setCurrentSale] = useState([]);
   const [totalCart, setTotalCart] = useState(0);
+  const [search, setSearch] = useState("");
 
   const showProducts = (category) => {
     setFilteredProducts(
-      products.map((element) => element.category === category)
+      products.filter((element) =>
+        element.category.toLowerCase().includes(category.toLowerCase())
+      )
     );
   };
   const handleClick = (productId) => {
@@ -32,6 +35,7 @@ function App() {
   const removeProduct = (productId) => {
     setCurrentSale(currentSale.filter((element) => element.id !== productId));
   };
+  console.log(search);
   return (
     <div className="App">
       <header className="App__title">
@@ -40,12 +44,17 @@ function App() {
           <p>Kenzie</p>
         </div>
         <div className="App__title__search">
-          <input type="text" maxLength="10px" placeholder="Digitar pesquisa" />
-          <button>Pesquisar</button>
+          <input
+            onChange={(event) => showProducts(event.target.value)}
+            type="text"
+            maxLength="10px"
+            placeholder="Digitar pesquisa"
+          />
+          <button onClick={() => showProducts(search)}>Pesquisar</button>
         </div>
       </header>
       <MenuContainer
-        products={products}
+        products={filteredProducts}
         handleClick={handleClick}
         currentSale={currentSale}
         setTotalCart={setTotalCart}

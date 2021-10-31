@@ -22,6 +22,7 @@ function App() {
   const [search, setSearch] = useState("");
 
   const showProducts = (category) => {
+    setSearch(category);
     setFilteredProducts(
       products.filter((element) =>
         element.category.toLowerCase().includes(category.toLowerCase())
@@ -48,7 +49,7 @@ function App() {
             onChange={(event) => showProducts(event.target.value)}
             type="text"
             maxLength="10px"
-            placeholder="Digitar pesquisa"
+            placeholder=" Digitar pesquisa"
           />
           <button onClick={() => showProducts(search)}>Pesquisar</button>
         </div>

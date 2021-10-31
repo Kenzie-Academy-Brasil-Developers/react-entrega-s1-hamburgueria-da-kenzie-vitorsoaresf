@@ -1,9 +1,21 @@
 .list-products {
   list-style: none;
   display: flex;
-  background-color: aquamarine;
+  /* flex-direction: column; */
 }
 
 .list-products__item {
   margin: 10px;
+}
+
+@media (min-width: 1024px) {
+  .list-products {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+  }
 }

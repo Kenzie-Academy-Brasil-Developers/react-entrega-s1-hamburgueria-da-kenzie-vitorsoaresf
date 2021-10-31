@@ -1,6 +1,8 @@
 .App {
   text-align: center;
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .App__title {
@@ -50,7 +52,6 @@
 }
 
 .App__title__search input::placeholder {
-  /* margin-left: 2px; */
   color: rgb(219, 219, 219);
 }
 
@@ -68,13 +69,22 @@
   font-family: "Inter", sans-serif;
   font-size: 12px;
   padding: 0px 20px 0px 20px;
-  /* text-align: center; */
+}
+
+@media (min-width: 574px) {
+  .App {
+    text-align: center;
+    display: flex;
+    align-items: flex-start;
+  }
 }
 
 @media (min-width: 1024px) {
   .App {
     text-align: center;
     display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
   }
 
   .App__title {
@@ -84,10 +94,11 @@
   }
 
   .App__title__logo {
-    margin-left: 115px;
+    margin-left: 90px;
   }
 
   .App__title__search {
-    margin-right: 58px;
+    width: 305px;
+    margin-right: 26px;
   }
 }

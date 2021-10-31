@@ -1,7 +1,9 @@
 .list-products {
   list-style: none;
+  flex-direction: column;
   display: flex;
-  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
 }
 
 .list-products__item {
@@ -14,8 +16,9 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 70%;
+    /* align-items: center; */
+    justify-content: flex-start;
+    width: 58%;
+    margin-left: 80px;
   }
 }

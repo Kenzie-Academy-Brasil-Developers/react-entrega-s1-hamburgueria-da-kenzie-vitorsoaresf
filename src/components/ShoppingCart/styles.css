@@ -77,14 +77,9 @@
   color: #828282;
   margin-bottom: 15px;
 }
-/* 
+
 @media (min-width: 1024px) {
   .shoppingCart {
-    display: flex;
-    flex-direction: column;
-    font-family: "Inter", sans-serif;
-    border-radius: 10px 10px 0px 0px;
-    width: 310px;
-    margin: 5px auto;
+    margin: 0px 26px 0px 0px;
   }
-} */
+}

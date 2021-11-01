@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./reset.css";
 import "./App.css";
 import { useState } from "react";
@@ -61,13 +60,10 @@ function App() {
         products={filteredProducts}
         handleClick={handleClick}
         currentSale={currentSale}
-        setTotalCart={setTotalCart}
-        removeProduct={removeProduct}
       />
       <ShoppingCart
         removeProduct={removeProduct}
         currentSale={currentSale}
-        totalCart={totalCart}
         setCurrentSale={setCurrentSale}
       />
     </div>

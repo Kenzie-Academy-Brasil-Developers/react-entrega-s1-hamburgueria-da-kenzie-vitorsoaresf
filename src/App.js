@@ -36,7 +36,7 @@ function App() {
   const removeProduct = (productId) => {
     setCurrentSale(currentSale.filter((element) => element.id !== productId));
   };
-  console.log(currentSale);
+
   return (
     <div className="App">
       <header className="App__title">
@@ -54,6 +54,9 @@ function App() {
           <button onClick={() => showProducts(search)}>Pesquisar</button>
         </div>
       </header>
+      {search !== "" ? (
+        <div className="result-search">Resultados para pesquisa</div>
+      ) : undefined}
       <MenuContainer
         products={filteredProducts}
         handleClick={handleClick}

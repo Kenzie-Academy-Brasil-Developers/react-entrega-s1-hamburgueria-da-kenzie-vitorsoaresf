@@ -32,14 +32,14 @@ function ShoppingCart({ currentSale, removeProduct, setCurrentSale }) {
           {currentSale.map((product, index) => (
             <li id={index} key={index}>
               <ProductCart removeProduct={removeProduct} product={product} />
-              <div className="bt-add-sub">
+              {/* <div className="bt-add-sub">
                 <button onClick={() => subAmount(subTotal - product.price)}>
                   -
                 </button>
                 <button onClick={() => addAmount(subTotal + product.price)}>
                   +
                 </button>
-              </div>
+              </div> */}
             </li>
           ))}
           {

@@ -2,13 +2,7 @@ import "./styles.css";
 
 import Product from "../Product";
 
-function MenuContainer({
-  products,
-  handleClick,
-  currentSale,
-  setTotalCart,
-  removeProduct,
-}) {
+function MenuContainer({ products, handleClick, currentSale, search }) {
   return (
     <ul className="list-products">
       {products.map((product, index) => (

@@ -71,6 +71,33 @@
   padding: 0px 20px 0px 20px;
 }
 
+.result-search {
+  background-color: #27ae60;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  position: absolute;
+  font-family: "Inter", sans-serif;
+  top: 16%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0%;
+  animation-name: search;
+  animation-duration: 2s;
+}
+
+@keyframes search {
+  0% {
+    opacity: 0%;
+  }
+  50% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
 @media (min-width: 574px) {
   .App {
     text-align: center;

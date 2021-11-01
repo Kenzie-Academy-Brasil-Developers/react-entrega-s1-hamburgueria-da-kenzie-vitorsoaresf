@@ -5,6 +5,9 @@
   width: 240px;
   height: 265px;
 }
+.container:hover {
+  box-shadow: 0 0 1em grey;
+}
 
 .description {
   font-family: "Inter", sans-serif;
@@ -46,6 +49,12 @@
   padding: 10px;
 
   margin: 10px;
+}
+
+.description-bt:hover {
+  color: #52af61;
+  background-color: white;
+  border: 1px solid #52af61;
 }
 
 .Hamburguer {

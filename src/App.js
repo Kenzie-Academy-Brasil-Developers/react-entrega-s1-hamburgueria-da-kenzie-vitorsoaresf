@@ -5,7 +5,7 @@ import { useState } from "react";
 import MenuContainer from "./components/MenuContainer";
 import ShoppingCart from "./components/ShoppingCart";
 function App() {
-  const [products, setProducts] = useState([
+  const [products] = useState([
     { id: 1, name: "Hamburguer", category: "Sanduíches", price: 7.99 },
     { id: 2, name: "X-Burguer", category: "Sanduíches", price: 8.99 },
     { id: 3, name: "X-Salada", category: "Sanduíches", price: 10.99 },

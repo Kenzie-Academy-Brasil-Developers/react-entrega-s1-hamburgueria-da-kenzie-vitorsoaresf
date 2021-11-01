@@ -4,6 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: aquamarine;
 }
 
 .list-products__item {
@@ -17,7 +18,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    width: 58%;
+    width: 65%;
     margin-left: 80px;
   }
 }

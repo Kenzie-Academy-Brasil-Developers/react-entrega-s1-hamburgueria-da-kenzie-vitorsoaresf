@@ -19,11 +19,11 @@ function App() {
   const [currentSale, setCurrentSale] = useState([]);
   const [search, setSearch] = useState("");
 
-  const showProducts = (category) => {
-    setSearch(category);
+  const showProducts = (nameProduct) => {
+    setSearch(nameProduct);
     setFilteredProducts(
       products.filter((element) =>
-        element.category.toLowerCase().includes(category.toLowerCase())
+        element.name.toLowerCase().includes(nameProduct.toLowerCase())
       )
     );
   };
